@@ -41,3 +41,15 @@ ax1.plot(crimp_visual["PresResult"][-300:-1])
 ax2 = ax1.twinx()
 ax2.plot(crimp_visual["DiamResult"][-300:-1], color = "red")
 ax2.grid(None)
+
+plt.figure(figsize = (10,2),dpi = 100)
+x = crimp_visual["DateTime"][-30:-1]
+y = crimp_visual["DiamResult"][-30:-1]
+plt.xlabel("Time", color = "red", size = 18)
+plt.ylabel("Diameter",  color = "red", size = 18)
+plt.title("Diameter vs Time Graph", color = "blue", fontdict={"fontname":"Comic Sans MS", 'fontsize':15})
+plt.plot(x,y)
+plt.xticks(crimp_visual["DateTime"][-30:-1], rotation = "vertical", size = 8)
+plt.yticks([18,18.5,19.0,19.2])
+plt.grid(which="major")
+plt.show()
