@@ -53,3 +53,18 @@ plt.xticks(crimp_visual["DateTime"][-30:-1], rotation = "vertical", size = 8)
 plt.yticks([18,18.5,19.0,19.2])
 plt.grid(which="major")
 plt.show()
+
+def cycletime_performance(TotalSeconds):
+    if TotalSeconds <= 20:
+        return "False cycle"  
+    elif TotalSeconds <= 40:
+        return "Very Good"
+    elif TotalSeconds <= 90:
+        return "Satisfactory"
+    else:
+        return "Poor"
+        
+crimp_visual["TotalSeconds"][-500:-1].apply(cycletime_performance).value_counts().plot(kind = "bar")
+plt.xlabel("Performance Status", color = "red", fontsize = 18)
+plt.ylabel("Quantity", color = "red", fontsize = 18)
+plt.show()
