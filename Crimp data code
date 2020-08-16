@@ -28,3 +28,9 @@ def cycletimestats(TotalSeconds):
             return "Need improvement"
         else:
             return "Not Acceptable"
+crimp_visual[["PresResult","DiamResult"]][-300:-1].plot()
+plt.grid()
+plt.xlabel("No. of parts", color = "Red", fontsize = 16)
+plt.ylabel("Pressure and Diameter", color = "Red", fontsize = 16)
+plt.figure(figsize = (10,2),dpi = 200)
+plt.show()
