@@ -21,3 +21,10 @@ crimp_visual["CycleTime"] = crimp_visual["DateTime"].diff()
 crimp_visual["TotalSeconds"] = crimp_visual["CycleTime"].dt.total_seconds()
 crimp_visual = crimp_visual.dropna(how = "any", axis = 0)
 crimp_visual["TotalSeconds"] = crimp_visual["TotalSeconds"].astype(int)
+def cycletimestats(TotalSeconds):
+        if TotalSeconds < 45:
+            return "Incredible"
+        elif TotalSeconds < 90:
+            return "Need improvement"
+        else:
+            return "Not Acceptable"
